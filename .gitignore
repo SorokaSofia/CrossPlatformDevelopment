@@ -1,0 +1,28 @@
+# .NET Core
+bin/
+obj/
+
+# Ignore output files
+OUTPUT.TXT
+
+# Ignore IDE-specific files
+*.user
+*.rsuser
+*.suo
+*.vs/
+.vscode/
+.idea/
+
+# Ignore build and debug files
+*.dll
+*.exe
+*.pdb
+*.log
+*.cache
+*.csproj.user
+*.DS_Store
+
+# Ignore temp files
+*.tmp
+*.bak
+*.swp
