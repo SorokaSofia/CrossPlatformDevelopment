@@ -8,7 +8,15 @@
       <ProjectFile Include="$(Solution)\*.csproj" />
    </ItemGroup>
 
-  <Target Name="Build">
+  <Target Name="PrepareLab3" Condition=" '$(Solution)' == 'Lab3' ">
+  <Exec Command="dotnet pack ./lab3/ssoroka/ssoroka.csproj -c Release" />
+  <Exec Command="dotnet nuget remove source LocalNugetRepo" ContinueOnError="true" />
+  <Exec Command="dotnet nuget add source ./lab3/ssoroka/bin/Release/ -n LocalNugetRepo" />
+  <Exec Command="dotnet add ./lab3/lab3/lab3.csproj package ssoroka --source ./lab3/ssoroka/bin/Release/" />
+</Target>
+
+
+  <Target Name="Build" DependsOnTargets="PrepareLab3">
     <PropertyGroup>
       <BuildProject>$(Solution)\$(Solution)\$(Solution).csproj</BuildProject>
     </PropertyGroup>

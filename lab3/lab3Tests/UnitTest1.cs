@@ -1,103 +1,109 @@
-namespace lab3Tests;
 
-public class UnitTest1
+using Xunit;
+using SSoroka; 
+
+namespace lab3Tests
 {
-    [Fact]
-    public void Test_SimpleFlatTerrain()
+    public class UnitTest1
     {
-        var input = new string[]
+        [Fact]
+        public void Test_SimpleFlatTerrain()
         {
-            "3 3",
-            "1 1 1",
-            "1 1 1",
-            "1 1 1"
-        };
-        Console.WriteLine("Test Case: Simple Flat Terrain");
-        int drainCount = RunTestWithInput(input);
-        Console.WriteLine($"Expected: 1, Actual: {drainCount}");
-        
-        Assert.Equal(1, drainCount);
-    }
+            var input = new string[]
+            {
+                "3 3",
+                "1 1 1",
+                "1 1 1",
+                "1 1 1"
+            };
+            Console.WriteLine("Test Case: Simple Flat Terrain");
+            int drainCount = RunTestWithInput(input);
+            Console.WriteLine($"Expected: 1, Actual: {drainCount}");
+            
+            Assert.Equal(1, drainCount);
+        }
 
-
-    [Fact]
-    public void Test_HighHillTerrain()
-    {
-        var input = new string[]
+        [Fact]
+        public void Test_HighHillTerrain()
         {
-            "3 3",
-            "5 5 5",
-            "5 5 5",
-            "5 5 5"
-        };
-        Console.WriteLine("Test Case: High Hill Terrain");
-        int drainCount = RunTestWithInput(input);
-        Console.WriteLine($"Expected: 1, Actual: {drainCount}");
-        
-        Assert.Equal(1, drainCount);
-    }
+            var input = new string[]
+            {
+                "3 3",
+                "5 5 5",
+                "5 5 5",
+                "5 5 5"
+            };
+            Console.WriteLine("Test Case: High Hill Terrain");
+            int drainCount = RunTestWithInput(input);
+            Console.WriteLine($"Expected: 1, Actual: {drainCount}");
+            
+            Assert.Equal(1, drainCount);
+        }
 
-    [Fact]
-    public void Test_OneLowerNeighbor()
-    {
-        var input = new string[]
+        [Fact]
+        public void Test_OneLowerNeighbor()
         {
-            "3 3",
-            "2 2 2",
-            "2 1 2",
-            "2 2 2"
-        };
-        Console.WriteLine("Test Case: One Lower Neighbor");
-        int drainCount = RunTestWithInput(input);
-        Console.WriteLine($"Expected: 1, Actual: {drainCount}");
-        
-        Assert.Equal(1, drainCount);
-    }
+            var input = new string[]
+            {
+                "3 3",
+                "2 2 2",
+                "2 1 2",
+                "2 2 2"
+            };
+            Console.WriteLine("Test Case: One Lower Neighbor");
+            int drainCount = RunTestWithInput(input);
+            Console.WriteLine($"Expected: 1, Actual: {drainCount}");
+            
+            Assert.Equal(1, drainCount);
+        }
 
-    [Fact]
-    public void Test_ComplexConnectedArea()
-    {
-        var input = new string[]
+        [Fact]
+        public void Test_ComplexConnectedArea()
         {
-            "5 5",
-            "5 5 5 5 5",
-            "5 3 3 3 5",
-            "5 3 2 3 5",
-            "5 3 3 3 5",
-            "5 5 5 5 5"
-        };
-        Console.WriteLine("Test Case: Complex Connected Area");
-        int drainCount = RunTestWithInput(input);
-        Console.WriteLine($"Expected: 1, Actual: {drainCount}");
-        
-        Assert.Equal(1, drainCount);
-    }
+            var input = new string[]
+            {
+                "5 5",
+                "5 5 5 5 5",
+                "5 3 3 3 5",
+                "5 3 2 3 5",
+                "5 3 3 3 5",
+                "5 5 5 5 5"
+            };
+            Console.WriteLine("Test Case: Complex Connected Area");
+            int drainCount = RunTestWithInput(input);
+            Console.WriteLine($"Expected: 1, Actual: {drainCount}");
+            
+            Assert.Equal(1, drainCount);
+        }
 
-    [Fact]
-    public void Test_ValleyScenario()
-    {
-        var input = new string[]
+        [Fact]
+        public void Test_ValleyScenario()
         {
-            "4 4",
-            "6 6 6 6",
-            "6 4 4 6",
-            "6 4 4 6",
-            "6 6 6 6"
-        };
-        Console.WriteLine("Test Case: Valley Scenario");
-        int drainCount = RunTestWithInput(input);
-        Console.WriteLine($"Expected: 1, Actual: {drainCount}");
-        
-        Assert.Equal(1, drainCount);
-    }
+            var input = new string[]
+            {
+                "4 4",
+                "6 6 6 6",
+                "6 4 4 6",
+                "6 4 4 6",
+                "6 6 6 6"
+            };
+            Console.WriteLine("Test Case: Valley Scenario");
+            int drainCount = RunTestWithInput(input);
+            Console.WriteLine($"Expected: 1, Actual: {drainCount}");
+            
+            Assert.Equal(1, drainCount);
+        }
 
-    private int RunTestWithInput(string[] input)
-    {
-        File.WriteAllLines("INPUT.TXT", input);
+        private int RunTestWithInput(string[] input)
+        {
+            // Записуємо вхідні дані у файл, як у справжньому середовищі
+            File.WriteAllLines("INPUT.TXT", input);
 
-        Program.Main();
+            // Використовуємо WaterFlowCalculator з бібліотеки ssoroka
+            var calculator = new WaterFlowCalculator();
+            int drainCount = calculator.CalculateDrainCount("INPUT.TXT");
 
-        var output = File.ReadAllText("OUTPUT.TXT");
-        return int.Parse(output);
+            return drainCount;
+        }
     }
 }
