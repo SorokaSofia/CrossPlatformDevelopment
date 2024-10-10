@@ -2,8 +2,8 @@
 bin/
 obj/
 
-# Ignore output files
-OUTPUT.TXT
+
+
 
 # Ignore IDE-specific files
 *.user
