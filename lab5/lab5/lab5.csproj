@@ -4,7 +4,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <UserSecretsId>aspnet-lab5-17039e0a-5159-4d74-9b1f-3a6bd782e4e3</UserSecretsId>
+    <UserSecretsId>aspnet-lab5-6c62e280-168e-49ec-b11e-4c19d5b7f5b1</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
