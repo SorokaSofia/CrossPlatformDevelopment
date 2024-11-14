@@ -15,6 +15,19 @@
   <Exec Command="dotnet add ./lab3/lab3/lab3.csproj package ssoroka --source ./lab3/ssoroka/bin/Release/" />
 </Target>
 
+  <Target Name="PrepareLab4" Condition=" '$(Solution)' == 'Lab4' ">
+  <Exec Command="dotnet msbuild build.proj /p:Solution=lab1 /t:Build" />
+  <Exec Command="dotnet msbuild build.proj /p:Solution=lab2 /t:Build" />
+  <Exec Command="dotnet msbuild build.proj /p:Solution=lab3 /t:Build" />
+</Target>
+
+<Target Name="Build" DependsOnTargets="PrepareLab4">
+    <PropertyGroup>
+      <BuildProject>$(Solution)\$(Solution)\$(Solution).csproj</BuildProject>
+    </PropertyGroup>
+    <MSBuild Projects="$(BuildProject)" Targets="Restore;Build" />
+  </Target>
+
 
   <Target Name="Build" DependsOnTargets="PrepareLab3">
     <PropertyGroup>

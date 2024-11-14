@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\Library\Library.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="McMaster.Extensions.CommandLineUtils" Version="4.1.1" />
+  </ItemGroup>
+
+ <PropertyGroup>
+    <PackAsTool>true</PackAsTool>
+    <ToolCommandName>dotnetgo</ToolCommandName>
+    <PackageId>ssofia</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Сорока Софія</Authors>
+    <Description>Консольний застосунок для запуску лабораторних робіт</Description>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+  </PropertyGroup>
+
+</Project>
