@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Lab3";
+}
+
+<div class="lab-page">
+    <h1>Lab3</h1>
+    <p>Ця підпрограма виконує завдання, пов'язані з [Програма що визначає, яку мінімальну кількість водостоків потрібно збудувати, щоб після дощу вся вода витікала у водостоки].</p>
+
+    <form asp-action="Lab3" method="post">
+        <div>
+            <label for="inputFile">Файл вводу:</label>
+            <input type="text" id="inputFile" name="inputFile" />
+        </div>
+        <div>
+            <label for="outputFile">Файл виводу:</label>
+            <input type="text" id="outputFile" name="outputFile" />
+        </div>
+        <button type="submit">Запустити</button>
+    </form>
+
+    @if (ViewBag.Message != null)
+    {
+        <p class="message">@ViewBag.Message</p>
+    }
+
+    @if (ViewBag.Error != null)
+    {
+        <p class="error">@ViewBag.Error</p>
+    }
+</div>
