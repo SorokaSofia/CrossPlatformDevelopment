@@ -1,0 +1,8 @@
+@model Lab6.Data.ServiceBooking
+
+<h2>Service Booking Details</h2>
+<p><strong>Licence Number:</strong> @Model.LicenceNumber</p>
+<p><strong>Customer:</strong> @Model.Customer.FirstName @Model.Customer.LastName</p>
+<p><strong>Car:</strong> @Model.Car.LicenceNumber</p>
+<p><strong>Details:</strong> @Model.OtherSvcBookingDetails</p>
+<a href="@Url.Action("Index")">Back</a>

@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Lab2";
+}
+
+<div class="lab-page">
+    <h1>Lab2</h1>
+    <p>Ця підпрограма виконує завдання, пов'язані з [Програма, яка визначає, скільки способів він може потрапити в магазин, пройшовши рівно K кроків і опинившись у магазині тільки після виконання останнього кроку].</p>
+
+    <form asp-action="Lab2" method="post">
+        <div>
+            <label for="inputFile">Файл вводу:</label>
+            <input type="text" id="inputFile" name="inputFile" />
+        </div>
+        <div>
+            <label for="outputFile">Файл виводу:</label>
+            <input type="text" id="outputFile" name="outputFile" />
+        </div>
+        <button type="submit">Запустити</button>
+    </form>
+
+    @if (ViewBag.Message != null)
+    {
+        <p class="message">@ViewBag.Message</p>
+    }
+
+    @if (ViewBag.Error != null)
+    {
+        <p class="error">@ViewBag.Error</p>
+    }
+</div>
