@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Lab1";
+}
+
+<div class="lab-page">
+    <h1>Lab1</h1>
+    <p>Ця підпрограма виконує завдання, пов'язані з [Гра в дартс дуже популярна у Великій Британії та Голландії. У грі беруть участь кілька гравців. Вони по черзі кидають у ціль по три дротики.].</p>
+
+    <form asp-action="Lab1" method="post">
+        <div>
+            <label for="inputFile">Файл вводу:</label>
+            <input type="text" id="inputFile" name="inputFile" />
+        </div>
+        <div>
+            <label for="outputFile">Файл виводу:</label>
+            <input type="text" id="outputFile" name="outputFile" />
+        </div>
+        <button type="submit">Запустити</button>
+    </form>
+
+    @if (ViewBag.Message != null)
+    {
+        <p class="message">@ViewBag.Message</p>
+    }
+
+    @if (ViewBag.Error != null)
+    {
+        <p class="error">@ViewBag.Error</p>
+    }
+</div>

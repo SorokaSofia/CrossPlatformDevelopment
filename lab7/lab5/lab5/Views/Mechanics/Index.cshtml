@@ -1,0 +1,26 @@
+@model dynamic
+
+<h2>Mechanics</h2>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Details</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var mechanic in Model)
+        {
+            <tr>
+                <td>@mechanic.mechanicId</td>
+                <td>@mechanic.mechanicName</td>
+                <td>@mechanic.otherMechanicDetails</td>
+                <td>
+                    <a href="/Mechanics/Details/@mechanic.mechanicId">Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

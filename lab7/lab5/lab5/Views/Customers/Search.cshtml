@@ -1,0 +1,46 @@
+@model dynamic
+
+<h2>Пошук клієнтів</h2>
+
+<form method="get" action="/Customers/Search">
+    <label>Ім'я:</label>
+    <input type="text" name="firstName" />
+
+    <label>Прізвище:</label>
+    <input type="text" name="lastName" />
+
+    <label>Email:</label>
+    <input type="text" name="email" />
+
+    <button type="submit">Шукати</button>
+</form>
+
+@if (Model != null && Model.Count > 0)
+{
+    <h3>Результати пошуку:</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Ім'я</th>
+                <th>Прізвище</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var customer in Model)
+            {
+                <tr>
+                    <td>@customer.customerId</td>
+                    <td>@customer.firstName</td>
+                    <td>@customer.lastName</td>
+                    <td>@customer.email</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Результати не знайдено.</p>
+}

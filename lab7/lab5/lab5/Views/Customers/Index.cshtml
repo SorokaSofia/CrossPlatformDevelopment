@@ -1,0 +1,31 @@
+@model dynamic
+
+<h2>Customers</h2>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var customer in Model)
+        {
+            <tr>
+                <td>@customer.customerId</td>
+                <td>@customer.firstName</td>
+                <td>@customer.lastName</td>
+                <td>@customer.emailAddress</td>
+                <td>@customer.phoneNumber</td>
+                <td>
+                    <a href="/Customers/Details/@customer.customerId">Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="/Customers/Search">Search Customers</a>
