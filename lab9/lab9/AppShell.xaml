@@ -1,0 +1,26 @@
+<Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:Lab9.Views"
+       x:Class="Lab9.AppShell">
+
+    <ShellItem>
+        <FlyoutItem Title="Login" Route="LoginPage">
+            <ShellContent ContentTemplate="{DataTemplate local:LoginPage}" />
+        </FlyoutItem>
+        <FlyoutItem Title="Main" Route="MainPage">
+            <ShellContent ContentTemplate="{DataTemplate local:MainPage}" />
+        </FlyoutItem>
+        <FlyoutItem Title="Models" Route="ModelsPage">
+            <ShellContent ContentTemplate="{DataTemplate local:ModelsPage}" />
+        </FlyoutItem>
+        <FlyoutItem Title="Mechanics" Route="MechanicsPage">
+            <ShellContent ContentTemplate="{DataTemplate local:MechanicsPage}" />
+        </FlyoutItem>
+        <FlyoutItem Title="About" Route="AboutPage">
+            <ShellContent ContentTemplate="{DataTemplate local:AboutPage}" />
+        </FlyoutItem>
+        <FlyoutItem Title="Customers" Route="CustomersPage">
+            <ShellContent ContentTemplate="{DataTemplate local:CustomersPage}" />
+        </FlyoutItem>
+    </ShellItem>
+</Shell>
