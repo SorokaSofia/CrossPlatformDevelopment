@@ -1,0 +1,18 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Lab9.Views"
+             x:Class="Lab9.Views.LoginPage"
+             Title="Login">
+    <VerticalStackLayout Padding="20">
+        <Label Text="Username" FontSize="Medium" />
+        <Entry x:Name="UsernameEntry" Placeholder="Enter your username" />
+
+        <Label Text="Password" FontSize="Medium" Margin="0,20,0,0" />
+        <Entry x:Name="PasswordEntry" Placeholder="Enter your password" IsPassword="True" />
+
+        <Button Text="Login"
+                Margin="0,20,0,0"
+                Command="{Binding LoginCommand}" />
+        <Label Text="{Binding ErrorMessage}" TextColor="Red" />
+    </VerticalStackLayout>
+</ContentPage>

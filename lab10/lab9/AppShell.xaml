@@ -1,0 +1,11 @@
+<Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:Lab9.Views"
+       x:Class="Lab9.AppShell">
+
+    <ShellContent Route="LoadingView" ContentTemplate="{DataTemplate views:LoadingView}" />
+    <ShellContent Route="MainView" ContentTemplate="{DataTemplate views:MainView}" />
+    <ShellContent Route="CustomersView" ContentTemplate="{DataTemplate views:CustomersView}" />
+    <ShellContent Route="MechanicsView" ContentTemplate="{DataTemplate views:MechanicsView}" />
+    <ShellContent Route="ModelsView" ContentTemplate="{DataTemplate views:ModelsView}" />
+</Shell>
